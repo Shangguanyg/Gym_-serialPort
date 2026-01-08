@@ -1,0 +1,118 @@
+[
+    {
+        "merged": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-debug-36:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-main-38:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-debug-36:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-main-38:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-debug-36:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-main-38:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-debug-36:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-main-38:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-debug-36:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-main-38:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-debug-36:/layout_include_fragment_container.xml.flat",
+        "source": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-main-38:/layout/include_fragment_container.xml"
+    },
+    {
+        "merged": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-debug-36:/mipmap-xxhdpi_bg_bjt.jpeg.flat",
+        "source": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-main-38:/mipmap-xxhdpi/bg_bjt.jpeg"
+    },
+    {
+        "merged": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-debug-36:/color_selector_log_text.xml.flat",
+        "source": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-main-38:/color/selector_log_text.xml"
+    },
+    {
+        "merged": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-debug-36:/layout_activity_multi_serial.xml.flat",
+        "source": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-main-38:/layout/activity_multi_serial.xml"
+    },
+    {
+        "merged": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-debug-36:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-main-38:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-debug-36:/layout_activity_main.xml.flat",
+        "source": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-main-38:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-debug-36:/layout_activity_select_serial_port.xml.flat",
+        "source": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-main-38:/layout/activity_select_serial_port.xml"
+    },
+    {
+        "merged": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-debug-36:/color_selector_spinner_text.xml.flat",
+        "source": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-main-38:/color/selector_spinner_text.xml"
+    },
+    {
+        "merged": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-debug-36:/layout_spinner_item.xml.flat",
+        "source": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-main-38:/layout/spinner_item.xml"
+    },
+    {
+        "merged": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-debug-36:/layout_activity_main_java.xml.flat",
+        "source": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-main-38:/layout/activity_main_java.xml"
+    },
+    {
+        "merged": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-debug-36:/layout_item_log.xml.flat",
+        "source": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-main-38:/layout/item_log.xml"
+    },
+    {
+        "merged": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-debug-36:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-main-38:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-debug-36:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-main-38:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-debug-36:/drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-main-38:/drawable-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-debug-36:/drawable_ic_launcher_background.xml.flat",
+        "source": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-main-38:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-debug-36:/layout_activity_multi_serial_new.xml.flat",
+        "source": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-main-38:/layout/activity_multi_serial_new.xml"
+    },
+    {
+        "merged": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-debug-36:/layout_item_device.xml.flat",
+        "source": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-main-38:/layout/item_device.xml"
+    },
+    {
+        "merged": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-debug-36:/layout_fragment_log.xml.flat",
+        "source": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-main-38:/layout/fragment_log.xml"
+    },
+    {
+        "merged": "com.cl.myapplication.app-debug-36:/layout_activity_port_main.xml.flat",
+        "source": "com.cl.myapplication.app-main-38:/layout/activity_port_main.xml"
+    },
+    {
+        "merged": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-debug-36:/layout_spinner_default_item.xml.flat",
+        "source": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-main-38:/layout/spinner_default_item.xml"
+    },
+    {
+        "merged": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-debug-36:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-main-38:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-debug-36:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-main-38:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-debug-36:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-main-38:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-debug-36:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-main-38:/mipmap-mdpi/ic_launcher_round.png"
+    }
+]

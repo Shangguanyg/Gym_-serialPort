@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fistbg3"
+    android:backgroundTintMode="screen"
+    tools:context=".StartUpActivity">
+
+    <TextView
+        android:id="@+id/fishview"
+        android:layout_width="401dp"
+        android:layout_height="199dp"
+        android:layout_marginTop="88dp"
+        android:shadowColor="@color/black"
+        android:shadowRadius="30"
+        android:text="@string/fist_name"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="70sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/fist_name" />
+
+    <ImageView
+        android:id="@+id/fish"
+        android:layout_width="405dp"
+        android:layout_height="252dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/pufferfish_left"
+        app:layout_constraintDimensionRatio="1.24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.757"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fishview" />
+
+    <Button
+        android:id="@+id/play_btn"
+        android:layout_width="348dp"
+        android:layout_height="75dp"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/carolina"
+        android:fontFamily="sans-serif"
+        android:outlineProvider="paddedBounds"
+        android:shadowColor="@color/bright_Green"
+        android:shadowRadius="2"
+        android:text="@string/play"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:cornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fish"
+        app:layout_constraintVertical_bias="0.237"
+        app:rippleColor="@color/carolina"
+        app:strokeColor="@color/carolina" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

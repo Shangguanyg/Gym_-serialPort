@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3" xmlns:ns1="http://schemas.android.com/tools"><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main" generated-set="main$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/res"><file name="ic_launcher" path="/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/res/mipmap-mdpi/ic_launcher.png" qualifiers="mdpi-v4" type="mipmap"/><file name="ic_launcher_round" path="/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" qualifiers="mdpi-v4" type="mipmap"/><file name="ic_launcher_foreground" path="/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" qualifiers="v24" type="drawable"/><file name="ic_launcher" path="/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/res/mipmap-hdpi/ic_launcher.png" qualifiers="hdpi-v4" type="mipmap"/><file name="ic_launcher_round" path="/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" qualifiers="hdpi-v4" type="mipmap"/><file name="ic_launcher_background" path="/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/res/drawable/ic_launcher_background.xml" qualifiers="" type="drawable"/><file name="ic_launcher" path="/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" qualifiers="xxxhdpi-v4" type="mipmap"/><file name="ic_launcher_round" path="/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" qualifiers="xxxhdpi-v4" type="mipmap"/><file name="include_fragment_container" path="/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/res/layout/include_fragment_container.xml" qualifiers="" type="layout"/><file name="fragment_log" path="/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/res/layout/fragment_log.xml" qualifiers="" type="layout"/><file name="spinner_default_item" path="/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/res/layout/spinner_default_item.xml" qualifiers="" type="layout"/><file name="activity_main_java" path="/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/res/layout/activity_main_java.xml" qualifiers="" type="layout"/><file name="activity_select_serial_port" path="/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/res/layout/activity_select_serial_port.xml" qualifiers="" type="layout"/><file name="spinner_item" path="/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/res/layout/spinner_item.xml" qualifiers="" type="layout"/><file name="item_log" path="/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/res/layout/item_log.xml" qualifiers="" type="layout"/><file name="activity_main" path="/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/res/layout/activity_main.xml" qualifiers="" type="layout"/><file name="activity_multi_serial" path="/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/res/layout/activity_multi_serial.xml" qualifiers="" type="layout"/><file name="item_device" path="/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/res/layout/item_device.xml" qualifiers="" type="layout"/><file name="activity_multi_serial_new" path="/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/res/layout/activity_multi_serial_new.xml" qualifiers="" type="layout"/><file name="bg_bjt" path="/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/res/mipmap-xxhdpi/bg_bjt.jpeg" qualifiers="xxhdpi-v4" type="mipmap"/><file name="ic_launcher" path="/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" qualifiers="xxhdpi-v4" type="mipmap"/><file name="ic_launcher_round" path="/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" qualifiers="xxhdpi-v4" type="mipmap"/><file name="selector_log_text" path="/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/res/color/selector_log_text.xml" qualifiers="" type="color"/><file name="selector_spinner_text" path="/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/res/color/selector_spinner_text.xml" qualifiers="" type="color"/><file path="/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/res/values-night/themes.xml" qualifiers="night-v8"><style name="Theme.MyApplication" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        
+        <item name="colorPrimary">@color/purple_200</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/black</item>
+        
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+        
+        <item name="android:statusBarColor" ns1:targetApi="l">?attr/colorPrimaryVariant</item>
+        
+    </style></file><file path="/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/res/values/colors.xml" qualifiers=""><color name="purple_200">#FFBB86FC</color><color name="purple_500">#FF6200EE</color><color name="purple_700">#FF3700B3</color><color name="teal_200">#FF03DAC5</color><color name="teal_700">#FF018786</color><color name="black">#FF000000</color><color name="white">#FFFFFFFF</color><color name="colorPrimary">#3F51B5</color><color name="colorPrimaryDark">#303F9F</color><color name="colorAccent">#FF4081</color><color name="colorItemGrey">#e4e4e4</color><color name="colorVeryLightBlue">#55a0a7cc</color><color name="colorLightBlue">#ffa0a7cc</color><color name="log_bg">#e5e5e5</color><color name="transparent">#00000000</color><color name="on_pressed">#30bfbfbf</color><color name="secondary_text">#727272</color><color name="divider">#B6B6B6</color><color name="color_888888">#888888</color><color name="color_20ffffff">#20ffffff</color></file><file path="/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/res/values/dimens.xml" qualifiers=""/><file path="/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/res/values/themes.xml" qualifiers=""><style name="Theme.MyApplication" parent="Theme.AppCompat.Light.NoActionBar">
+        
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        
+        <item name="android:statusBarColor" ns1:targetApi="l">?attr/colorPrimaryVariant</item>
+        
+    </style><style name="ButtonStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:textSize">17dp</item>
+    </style></file><file path="/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/res/values/strings.xml" qualifiers=""><string name="app_name">串口调试助手</string><string name="select_serial_port">串口设备:</string><string name="select_baud_rate">波特率</string><string name="open_serial_port">打开串口</string><string name="close_serial_port">关闭串口</string><string name="no_serial_device">找不到串口设备</string><string name="send_data">发送命令</string><string name="input_data">输入命令</string><string name="load_cmd_list">加载命令列表</string><string name="title_data_bits">数据位:</string><string name="title_parity">校验位:</string><string name="title_stop_bits">停止位:</string></file><file path="/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/res/values/string_arrays.xml" qualifiers=""><string-array name="baudrates">
+        <item>110</item>
+        <item>300</item>
+        <item>600</item>
+        <item>1200</item>
+        <item>2400</item>
+        <item>4800</item>
+        <item>9600</item>
+        <item>14400</item>
+        <item>19200</item>
+        <item>38400</item>
+        <item>56000</item>
+        <item>57600</item>
+        <item>115200</item>
+        <item>128000</item>
+        <item>256000</item>
+    </string-array><string-array name="channels">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array><string-array name="pulses">
+        <item>0：设备默认</item>
+        <item>1：快 20ms</item>
+        <item>2：中 40ms</item>
+        <item>3：慢 60ms</item>
+    </string-array></file><file name="ic_launcher" path="/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/res/mipmap-xhdpi/ic_launcher.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="ic_launcher_round" path="/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" qualifiers="xhdpi-v4" type="mipmap"/><file name="ic_launcher" path="/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" qualifiers="anydpi-v26" type="mipmap"/><file name="ic_launcher_round" path="/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" qualifiers="anydpi-v26" type="mipmap"/><file name="activity_port_main" path="/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/res/layout/activity_port_main.xml" qualifiers="" type="layout"/></source></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/debug/res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/debug/res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="generated$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/build/generated/res/resValues/debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="generated" generated-set="generated$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/build/generated/res/resValues/debug"/></dataSet><mergedItems/></merger>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/tools">
+    <string-array name="baudrates">
+        <item>110</item>
+        <item>300</item>
+        <item>600</item>
+        <item>1200</item>
+        <item>2400</item>
+        <item>4800</item>
+        <item>9600</item>
+        <item>14400</item>
+        <item>19200</item>
+        <item>38400</item>
+        <item>56000</item>
+        <item>57600</item>
+        <item>115200</item>
+        <item>128000</item>
+        <item>256000</item>
+    </string-array>
+    <string-array name="channels">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+    <string-array name="pulses">
+        <item>0：设备默认</item>
+        <item>1：快 20ms</item>
+        <item>2：中 40ms</item>
+        <item>3：慢 60ms</item>
+    </string-array>
+    <color name="black">#FF000000</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorItemGrey">#e4e4e4</color>
+    <color name="colorLightBlue">#ffa0a7cc</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorVeryLightBlue">#55a0a7cc</color>
+    <color name="color_20ffffff">#20ffffff</color>
+    <color name="color_888888">#888888</color>
+    <color name="divider">#B6B6B6</color>
+    <color name="log_bg">#e5e5e5</color>
+    <color name="on_pressed">#30bfbfbf</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="secondary_text">#727272</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="transparent">#00000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">串口调试助手</string>
+    <string name="close_serial_port">关闭串口</string>
+    <string name="input_data">输入命令</string>
+    <string name="load_cmd_list">加载命令列表</string>
+    <string name="no_serial_device">找不到串口设备</string>
+    <string name="open_serial_port">打开串口</string>
+    <string name="select_baud_rate">波特率</string>
+    <string name="select_serial_port">串口设备:</string>
+    <string name="send_data">发送命令</string>
+    <string name="title_data_bits">数据位:</string>
+    <string name="title_parity">校验位:</string>
+    <string name="title_stop_bits">停止位:</string>
+    <style name="ButtonStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:textSize">17dp</item>
+    </style>
+    <style name="Theme.MyApplication" parent="Theme.AppCompat.Light.NoActionBar">
+        
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        
+        <item name="android:statusBarColor" ns1:targetApi="l">?attr/colorPrimaryVariant</item>
+        
+    </style>
+</resources>

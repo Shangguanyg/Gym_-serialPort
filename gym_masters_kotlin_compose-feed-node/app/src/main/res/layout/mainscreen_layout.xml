@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <!-- Displays foreground of title and buttons -->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal">
+    <!-- Displays background todo: behind relative layout-->
+    <com.ganainy.galaxyrun.view.MainMenuBackground
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"/>
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textSize="100sp"
+        android:textColor="#FFFFFF"
+        android:text="@string/app_name"
+        android:fontFamily="@font/galaxy_monkey" />
+    <Button
+        android:id="@+id/playbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:text="@string/button_play"
+        android:textSize="80sp"
+        android:textColor="@drawable/button_textcolor"
+        android:background="@android:color/transparent"
+        android:alpha="0"
+        android:fontFamily="@font/galaxy_monkey"
+        android:onClick="onPlayPressed"/>
+    <TextView
+        android:id="@+id/attribution"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:text="@string/attribution" />
+    <TextView
+        android:id="@+id/privacy_policy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:text="Privacy Policy"
+        android:onClick="onPrivacyPolicyPressed"/>
+</RelativeLayout>

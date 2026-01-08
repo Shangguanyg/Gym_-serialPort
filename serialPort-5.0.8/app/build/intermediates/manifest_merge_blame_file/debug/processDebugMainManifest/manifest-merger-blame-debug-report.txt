@@ -1,0 +1,196 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.cl.myapplication"
+4    android:versionCode="401"
+5    android:versionName="4.0.1" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="24"
+9        android:targetSdkVersion="36" />
+10
+11    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+11-->/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/AndroidManifest.xml:6:5-81
+11-->/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/AndroidManifest.xml:6:22-78
+12    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+12-->/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/AndroidManifest.xml:7:5-84
+12-->/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/AndroidManifest.xml:7:22-81
+13
+14    <permission
+14-->[androidx.core:core:1.10.1] /Users/shangguanyangguang/.gradle/caches/8.13/transforms/3195b8150eedc48187b9b2056f9f1ab2/transformed/core-1.10.1/AndroidManifest.xml:22:5-24:47
+15        android:name="com.cl.myapplication.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+15-->[androidx.core:core:1.10.1] /Users/shangguanyangguang/.gradle/caches/8.13/transforms/3195b8150eedc48187b9b2056f9f1ab2/transformed/core-1.10.1/AndroidManifest.xml:23:9-81
+16        android:protectionLevel="signature" />
+16-->[androidx.core:core:1.10.1] /Users/shangguanyangguang/.gradle/caches/8.13/transforms/3195b8150eedc48187b9b2056f9f1ab2/transformed/core-1.10.1/AndroidManifest.xml:24:9-44
+17
+18    <uses-permission android:name="com.cl.myapplication.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+18-->[androidx.core:core:1.10.1] /Users/shangguanyangguang/.gradle/caches/8.13/transforms/3195b8150eedc48187b9b2056f9f1ab2/transformed/core-1.10.1/AndroidManifest.xml:26:5-97
+18-->[androidx.core:core:1.10.1] /Users/shangguanyangguang/.gradle/caches/8.13/transforms/3195b8150eedc48187b9b2056f9f1ab2/transformed/core-1.10.1/AndroidManifest.xml:26:22-94
+19
+20    <application
+20-->/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/AndroidManifest.xml:10:5-60:19
+21        android:name="com.cl.myapplication.App"
+21-->/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/AndroidManifest.xml:11:9-28
+22        android:allowBackup="true"
+22-->/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/AndroidManifest.xml:12:9-35
+23        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+23-->[androidx.core:core:1.10.1] /Users/shangguanyangguang/.gradle/caches/8.13/transforms/3195b8150eedc48187b9b2056f9f1ab2/transformed/core-1.10.1/AndroidManifest.xml:28:18-86
+24        android:debuggable="true"
+25        android:extractNativeLibs="false"
+26        android:icon="@mipmap/ic_launcher"
+26-->/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/AndroidManifest.xml:13:9-43
+27        android:label="@string/app_name"
+27-->/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/AndroidManifest.xml:14:9-41
+28        android:roundIcon="@mipmap/ic_launcher_round"
+28-->/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/AndroidManifest.xml:15:9-54
+29        android:supportsRtl="true"
+29-->/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/AndroidManifest.xml:16:9-35
+30        android:testOnly="true"
+31        android:theme="@style/Theme.MyApplication" >
+31-->/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/AndroidManifest.xml:17:9-51
+32        <meta-data
+32-->/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/AndroidManifest.xml:19:9-21:36
+33            android:name="design_width_in_dp"
+33-->/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/AndroidManifest.xml:20:13-46
+34            android:value="1080" />
+34-->/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/AndroidManifest.xml:21:13-33
+35        <meta-data
+35-->/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/AndroidManifest.xml:22:9-24:36
+36            android:name="design_height_in_dp"
+36-->/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/AndroidManifest.xml:23:13-47
+37            android:value="1920" />
+37-->/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/AndroidManifest.xml:24:13-33
+38
+39        <activity
+39-->/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/AndroidManifest.xml:26:9-36:20
+40            android:name="com.cl.myapplication.MultiSerialPortActivity"
+40-->/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/AndroidManifest.xml:26:19-58
+41            android:exported="true"
+41-->/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/AndroidManifest.xml:27:13-36
+42            android:screenOrientation="landscape" >
+42-->/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/AndroidManifest.xml:28:13-50
+43            <intent-filter>
+43-->/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/AndroidManifest.xml:30:13-34:29
+44                <action android:name="android.intent.action.MAIN" />
+44-->/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/AndroidManifest.xml:31:17-69
+44-->/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/AndroidManifest.xml:31:25-66
+45
+46                <category android:name="android.intent.category.LAUNCHER" />
+46-->/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/AndroidManifest.xml:33:17-77
+46-->/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/AndroidManifest.xml:33:27-74
+47            </intent-filter>
+48        </activity>
+49        <activity
+49-->/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/AndroidManifest.xml:38:9-47:20
+50            android:name="com.cl.myapplication.SingleSerialPortActivity"
+50-->/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/AndroidManifest.xml:39:13-53
+51            android:exported="true"
+51-->/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/AndroidManifest.xml:40:13-36
+52            android:screenOrientation="landscape" >
+52-->/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/AndroidManifest.xml:41:13-50
+53
+54            <!-- <intent-filter> -->
+55            <!-- <action android:name="android.intent.action.MAIN" /> -->
+56
+57
+58            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+59            <!-- </intent-filter> -->
+60        </activity>
+61
+62        <!-- 查看哪些串口是否可用 -->
+63        <activity android:name="com.cl.myapplication.SelectSerialPortActivity" >
+63-->/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/AndroidManifest.xml:50:9-56:20
+63-->/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/AndroidManifest.xml:50:19-59
+64
+65            <!-- <intent-filter> -->
+66            <!-- <action android:name="android.intent.action.MAIN" /> -->
+67
+68
+69            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+70            <!-- </intent-filter> -->
+71        </activity>
+72        <activity
+72-->/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/AndroidManifest.xml:57:9-59:81
+73            android:name="com.cl.myapplication.MainActivity"
+73-->/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/AndroidManifest.xml:58:13-41
+74            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+74-->/Users/shangguanyangguang/Downloads/serialPort-5.0.8/app/src/main/AndroidManifest.xml:59:13-69
+75
+76        <provider
+76-->[androidx.emoji2:emoji2:1.2.0] /Users/shangguanyangguang/.gradle/caches/8.13/transforms/0a7ecb29834615b5715155ec258862cf/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+77            android:name="androidx.startup.InitializationProvider"
+77-->[androidx.emoji2:emoji2:1.2.0] /Users/shangguanyangguang/.gradle/caches/8.13/transforms/0a7ecb29834615b5715155ec258862cf/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
+78            android:authorities="com.cl.myapplication.androidx-startup"
+78-->[androidx.emoji2:emoji2:1.2.0] /Users/shangguanyangguang/.gradle/caches/8.13/transforms/0a7ecb29834615b5715155ec258862cf/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
+79            android:exported="false" >
+79-->[androidx.emoji2:emoji2:1.2.0] /Users/shangguanyangguang/.gradle/caches/8.13/transforms/0a7ecb29834615b5715155ec258862cf/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
+80            <meta-data
+80-->[androidx.emoji2:emoji2:1.2.0] /Users/shangguanyangguang/.gradle/caches/8.13/transforms/0a7ecb29834615b5715155ec258862cf/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+81                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+81-->[androidx.emoji2:emoji2:1.2.0] /Users/shangguanyangguang/.gradle/caches/8.13/transforms/0a7ecb29834615b5715155ec258862cf/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
+82                android:value="androidx.startup" />
+82-->[androidx.emoji2:emoji2:1.2.0] /Users/shangguanyangguang/.gradle/caches/8.13/transforms/0a7ecb29834615b5715155ec258862cf/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
+83            <meta-data
+83-->[androidx.lifecycle:lifecycle-process:2.6.1] /Users/shangguanyangguang/.gradle/caches/8.13/transforms/f86336ae5e6d9be77b02beea1f0cbcef/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:29:13-31:52
+84                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+84-->[androidx.lifecycle:lifecycle-process:2.6.1] /Users/shangguanyangguang/.gradle/caches/8.13/transforms/f86336ae5e6d9be77b02beea1f0cbcef/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:30:17-78
+85                android:value="androidx.startup" />
+85-->[androidx.lifecycle:lifecycle-process:2.6.1] /Users/shangguanyangguang/.gradle/caches/8.13/transforms/f86336ae5e6d9be77b02beea1f0cbcef/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:31:17-49
+86            <meta-data
+86-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/shangguanyangguang/.gradle/caches/8.13/transforms/a9a0d10b8caa12d83de319a87ce24b96/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
+87                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+87-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/shangguanyangguang/.gradle/caches/8.13/transforms/a9a0d10b8caa12d83de319a87ce24b96/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
+88                android:value="androidx.startup" />
+88-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/shangguanyangguang/.gradle/caches/8.13/transforms/a9a0d10b8caa12d83de319a87ce24b96/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
+89        </provider>
+90
+91        <receiver
+91-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/shangguanyangguang/.gradle/caches/8.13/transforms/a9a0d10b8caa12d83de319a87ce24b96/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
+92            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+92-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/shangguanyangguang/.gradle/caches/8.13/transforms/a9a0d10b8caa12d83de319a87ce24b96/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
+93            android:directBootAware="false"
+93-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/shangguanyangguang/.gradle/caches/8.13/transforms/a9a0d10b8caa12d83de319a87ce24b96/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
+94            android:enabled="true"
+94-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/shangguanyangguang/.gradle/caches/8.13/transforms/a9a0d10b8caa12d83de319a87ce24b96/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
+95            android:exported="true"
+95-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/shangguanyangguang/.gradle/caches/8.13/transforms/a9a0d10b8caa12d83de319a87ce24b96/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
+96            android:permission="android.permission.DUMP" >
+96-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/shangguanyangguang/.gradle/caches/8.13/transforms/a9a0d10b8caa12d83de319a87ce24b96/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
+97            <intent-filter>
+97-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/shangguanyangguang/.gradle/caches/8.13/transforms/a9a0d10b8caa12d83de319a87ce24b96/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
+98                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+98-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/shangguanyangguang/.gradle/caches/8.13/transforms/a9a0d10b8caa12d83de319a87ce24b96/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
+98-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/shangguanyangguang/.gradle/caches/8.13/transforms/a9a0d10b8caa12d83de319a87ce24b96/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
+99            </intent-filter>
+100            <intent-filter>
+100-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/shangguanyangguang/.gradle/caches/8.13/transforms/a9a0d10b8caa12d83de319a87ce24b96/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
+101                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+101-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/shangguanyangguang/.gradle/caches/8.13/transforms/a9a0d10b8caa12d83de319a87ce24b96/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
+101-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/shangguanyangguang/.gradle/caches/8.13/transforms/a9a0d10b8caa12d83de319a87ce24b96/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
+102            </intent-filter>
+103            <intent-filter>
+103-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/shangguanyangguang/.gradle/caches/8.13/transforms/a9a0d10b8caa12d83de319a87ce24b96/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
+104                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+104-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/shangguanyangguang/.gradle/caches/8.13/transforms/a9a0d10b8caa12d83de319a87ce24b96/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
+104-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/shangguanyangguang/.gradle/caches/8.13/transforms/a9a0d10b8caa12d83de319a87ce24b96/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+105            </intent-filter>
+106            <intent-filter>
+106-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/shangguanyangguang/.gradle/caches/8.13/transforms/a9a0d10b8caa12d83de319a87ce24b96/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
+107                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+107-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/shangguanyangguang/.gradle/caches/8.13/transforms/a9a0d10b8caa12d83de319a87ce24b96/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
+107-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/shangguanyangguang/.gradle/caches/8.13/transforms/a9a0d10b8caa12d83de319a87ce24b96/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
+108            </intent-filter>
+109        </receiver>
+110
+111        <provider
+111-->[com.github.JessYanCoding:AndroidAutoSize:v1.2.1] /Users/shangguanyangguang/.gradle/caches/8.13/transforms/a10e555e6051cc4f2d3d6110ab343f6b/transformed/jetified-AndroidAutoSize-v1.2.1/AndroidManifest.xml:12:9-16:43
+112            android:name="me.jessyan.autosize.InitProvider"
+112-->[com.github.JessYanCoding:AndroidAutoSize:v1.2.1] /Users/shangguanyangguang/.gradle/caches/8.13/transforms/a10e555e6051cc4f2d3d6110ab343f6b/transformed/jetified-AndroidAutoSize-v1.2.1/AndroidManifest.xml:13:13-60
+113            android:authorities="com.cl.myapplication.autosize-init-provider"
+113-->[com.github.JessYanCoding:AndroidAutoSize:v1.2.1] /Users/shangguanyangguang/.gradle/caches/8.13/transforms/a10e555e6051cc4f2d3d6110ab343f6b/transformed/jetified-AndroidAutoSize-v1.2.1/AndroidManifest.xml:14:13-74
+114            android:exported="false"
+114-->[com.github.JessYanCoding:AndroidAutoSize:v1.2.1] /Users/shangguanyangguang/.gradle/caches/8.13/transforms/a10e555e6051cc4f2d3d6110ab343f6b/transformed/jetified-AndroidAutoSize-v1.2.1/AndroidManifest.xml:15:13-37
+115            android:multiprocess="true" />
+115-->[com.github.JessYanCoding:AndroidAutoSize:v1.2.1] /Users/shangguanyangguang/.gradle/caches/8.13/transforms/a10e555e6051cc4f2d3d6110ab343f6b/transformed/jetified-AndroidAutoSize-v1.2.1/AndroidManifest.xml:16:13-40
+116    </application>
+117
+118</manifest>

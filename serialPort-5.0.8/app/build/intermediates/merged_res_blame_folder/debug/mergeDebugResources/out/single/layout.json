@@ -1,0 +1,46 @@
+[
+    {
+        "merged": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-mergeDebugResources-35:/layout/item_device.xml",
+        "source": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-main-38:/layout/item_device.xml"
+    },
+    {
+        "merged": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-mergeDebugResources-35:/layout/spinner_default_item.xml",
+        "source": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-main-38:/layout/spinner_default_item.xml"
+    },
+    {
+        "merged": "com.cl.myapplication.app-mergeDebugResources-35:/layout/activity_port_main.xml",
+        "source": "com.cl.myapplication.app-main-38:/layout/activity_port_main.xml"
+    },
+    {
+        "merged": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-mergeDebugResources-35:/layout/activity_main.xml",
+        "source": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-main-38:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-mergeDebugResources-35:/layout/spinner_item.xml",
+        "source": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-main-38:/layout/spinner_item.xml"
+    },
+    {
+        "merged": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-mergeDebugResources-35:/layout/activity_multi_serial_new.xml",
+        "source": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-main-38:/layout/activity_multi_serial_new.xml"
+    },
+    {
+        "merged": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-mergeDebugResources-35:/layout/fragment_log.xml",
+        "source": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-main-38:/layout/fragment_log.xml"
+    },
+    {
+        "merged": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-mergeDebugResources-35:/layout/activity_main_java.xml",
+        "source": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-main-38:/layout/activity_main_java.xml"
+    },
+    {
+        "merged": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-mergeDebugResources-35:/layout/item_log.xml",
+        "source": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-main-38:/layout/item_log.xml"
+    },
+    {
+        "merged": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-mergeDebugResources-35:/layout/activity_multi_serial.xml",
+        "source": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-main-38:/layout/activity_multi_serial.xml"
+    },
+    {
+        "merged": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-mergeDebugResources-35:/layout/activity_select_serial_port.xml",
+        "source": "/Users/shangguanyangguang/.gradle/daemon/8.13/com.cl.myapplication.app-main-38:/layout/activity_select_serial_port.xml"
+    }
+]

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- AnimatorSet to gently zoom the Spaceships text on the mainscreen
+in and out -->
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <set android:ordering="sequentially">
+        <set>
+            <objectAnimator
+                android:propertyName="scaleX"
+                android:duration="1000"
+                android:valueTo="1.5f"
+                android:valueType="floatType"/>
+            <objectAnimator
+                android:propertyName="scaleY"
+                android:duration="1000"
+                android:valueTo="1.5f"
+                android:valueType="floatType"/>
+        </set>
+        <set>
+            <objectAnimator
+                android:propertyName="scaleX"
+                android:duration="1000"
+                android:valueTo="1.0f"
+                android:valueType="floatType"/>
+            <objectAnimator
+                android:propertyName="scaleY"
+                android:duration="1000"
+                android:valueTo="1.0f"
+                android:valueType="floatType"/>
+        </set>
+    </set>
+</set>

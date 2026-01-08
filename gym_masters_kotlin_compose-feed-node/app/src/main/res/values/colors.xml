@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="green">@android:color/holo_green_light</color>
+    <color name="lightGray">#F4F3F3</color>
+    <color name="lightBlack">#333333</color>
+    <color name="mediumGray">#666666</color>
+    <color name="aaChartCoreThemeColor">#4b2b7f</color>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="lightblue">#FF33B5E5</color>
+    <color name="lighter_orange_1">#ffc03a</color>
+    <color name="darker_orange_1">#fcac00</color>
+    <color name="alt_orange">#FF6B02</color>
+    <color name="grey">#6f6f6f</color>
+    <color name="orange">#ffb30f</color>
+    <color name="decent_black">#333333</color>
+    <color name="decent_blue">#3290BC</color>
+    <color name="decent_green">#7ED859</color>
+    <color name="decent_red">#AE2626</color>
+    <color name="decent_yellow">#F9D423</color>
+    <color name="barrier_Color">#330707</color>
+    <color name="carolina">#57A0D3</color>
+    <color name="teal">#008080</color>
+    <color name="bright_Green">#AAFF00</color>
+    <color name="light_blue">#ADD8E6</color>
+    <color name="blue_end">#007AFF</color>
+    <color name="blue_start">#FF0000FF</color> <!-- Example blue color -->
+    <color name="light_black">#161616</color>
+    <color name="secondary_text">#727272</color>
+    <color name="colorLightBlue">#ffa0a7cc</color>
+    <color name="divider">#B6B6B6</color>
+    <color name="log_bg">#e5e5e5</color>
+</resources>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- defines fade-in for Play, Store, and Stats buttons in MainAcivity -->
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <set android:ordering="sequentially">
+        <!-- Fade in -->
+        <objectAnimator
+            android:propertyName="alpha"
+            android:duration="1500"
+            android:valueFrom="0"
+            android:valueTo="1"
+            android:valueType="floatType"
+            android:startOffset="200"/>
+        <!-- Zoom in and out -->
+        <set
+            android:ordering="together">
+            <set>
+                <objectAnimator
+                    android:propertyName="scaleX"
+                    android:duration="1000"
+                    android:valueTo="1.1f"
+                    android:valueType="floatType"
+                    android:repeatCount="infinite"
+                    android:repeatMode="reverse"/>
+                <objectAnimator
+                    android:propertyName="scaleY"
+                    android:duration="1000"
+                    android:valueTo="1.1f"
+                    android:valueType="floatType"
+                    android:repeatCount="infinite"
+                    android:repeatMode="reverse"/>
+            </set>
+        </set>
+    </set>
+
+</set>

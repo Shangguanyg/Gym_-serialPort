@@ -1,0 +1,53 @@
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+}
+
+android {
+    namespace 'com.cl.myapplication'
+    compileSdk 36
+
+    defaultConfig {
+        applicationId "com.cl.myapplication"
+        minSdk 24
+        targetSdk 36
+        versionCode 401
+        versionName "4.0.1"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+    buildFeatures{
+        dataBinding=true
+    }
+}
+
+dependencies {
+
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+    implementation libs.material
+    implementation 'androidx.cardview:cardview:1.0.0'
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.junit
+    androidTestImplementation libs.androidx.espresso.core
+    implementation 'org.greenrobot:eventbus:3.2.0'
+    implementation 'com.github.getActivity:ToastUtils:9.6'
+    implementation 'com.github.JessYanCoding:AndroidAutoSize:v1.2.1'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation project(path: ':serial_lib')
+
+}
