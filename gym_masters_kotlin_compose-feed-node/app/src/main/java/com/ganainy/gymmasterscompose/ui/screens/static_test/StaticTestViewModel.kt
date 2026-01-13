@@ -1,6 +1,7 @@
 package com.ganainy.gymmasterscompose.ui.screens.static_test
 
 import android.os.Handler
+import android.os.Looper
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.ganainy.gymmasterscompose.ui.models.Exercise
@@ -15,7 +16,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-import com.github.aachartmodel.aainfographics.aachartcreator.*
+//import com.github.aachartmodel.aainfographics.aachartcreator.*
 import com.github.aachartmodel.aainfographics.aachartcreator.AAOptions
 import com.github.aachartmodel.aainfographics.aatools.AAGradientColor
 import kotlin.math.cos
@@ -43,15 +44,40 @@ class StaticTestViewModel @Inject constructor(
         val uiState = _uiState.asStateFlow()
 
     //aaChartModel 是一个 AAChartModel 的实例，用于配置图表的数据模型。
-    private var aaChartModel = AAChartModel()
+    //private var aaChartModel = AAChartModel()
 
     //aaChartView 是一个可空的 AAChartView 对象，用于显示图表。
-    private var aaChartView: AAChartView? = null
+    //private var aaChartView: AAChartView? = null
 
     //updateTimes 是一个整数，用于记录图表数据刷新的次数，初始值为 0。
     private var updateTimes: Int = 0
 
-        //核心功能
+    val generatedData = MutableStateFlow<List<Int>>(emptyList())
+    private val dataGenerator = Handler(Looper.getMainLooper())
+
+
+    fun startDataGeneration() {
+        val dataRunnable = object : Runnable {
+            override fun run() {
+                val randomValue = (0..100).random()
+                val currentList = generatedData.value.toMutableList()
+                currentList.add(randomValue)
+                // 保持最近50个数据点
+                if (currentList.size > 50) {
+                    currentList.removeAt(0)
+                }
+                generatedData.value = currentList
+                dataGenerator.postDelayed(this, 100)
+            }
+        }
+        dataGenerator.post(dataRunnable)
+    }
+
+    fun stopDataGeneration() {
+        dataGenerator.removeCallbacksAndMessages(null)
+    }
+
+    //核心功能
         //初始化和练习设置
         //ViewModel 通过在其 init 块中调用 observeExerciseSaveState（） 来初始化。
         //init 块: 初始化代码块，在创建 ViewModel 时自动执行。这里调用 observeExerciseSaveState() 方法来启动观察锻炼保存状态的逻辑。
@@ -194,86 +220,87 @@ class StaticTestViewModel @Inject constructor(
 //            .build()
 //    }
 
-    //convertStringToEnum 方法将图表类型字符串转换为相应的 AAChartType 枚举类型，提供默认值为 Column。
-    private fun convertStringToEnum(chartTypeStr: String): AAChartType {
-        var chartTypeEnum = AAChartType.Column
-        //通过 when 表达式检查不同的图表类型。
-        when (chartTypeStr) {
-            AAChartType.Column.value -> chartTypeEnum = AAChartType.Column
-            AAChartType.Bar.value -> chartTypeEnum = AAChartType.Bar
-            AAChartType.Area.value -> chartTypeEnum = AAChartType.Area
-            AAChartType.Areaspline.value -> chartTypeEnum = AAChartType.Areaspline
-            AAChartType.Line.value -> chartTypeEnum = AAChartType.Line
-            AAChartType.Spline.value -> chartTypeEnum = AAChartType.Spline
-            AAChartType.Scatter.value -> chartTypeEnum = AAChartType.Scatter
-        }
-        return chartTypeEnum
-    }
+//    //convertStringToEnum 方法将图表类型字符串转换为相应的 AAChartType 枚举类型，提供默认值为 Column。
+//    private fun convertStringToEnum(chartTypeStr: String): AAChartType {
+//        var chartTypeEnum = AAChartType.Column
+//        //通过 when 表达式检查不同的图表类型。
+//        when (chartTypeStr) {
+//            AAChartType.Column.value -> chartTypeEnum = AAChartType.Column
+//            AAChartType.Bar.value -> chartTypeEnum = AAChartType.Bar
+//            AAChartType.Area.value -> chartTypeEnum = AAChartType.Area
+//            AAChartType.Areaspline.value -> chartTypeEnum = AAChartType.Areaspline
+//            AAChartType.Line.value -> chartTypeEnum = AAChartType.Line
+//            AAChartType.Spline.value -> chartTypeEnum = AAChartType.Spline
+//            AAChartType.Scatter.value -> chartTypeEnum = AAChartType.Scatter
+//        }
+//        return chartTypeEnum
+//    }
 
 
     // configureChartSeriesArray 方法创建一个图表数据系列。
     // 使用 @Suppress("UNCHECKED_CAST") 注解避免在类型转换时的警告。
-    @Suppress("UNCHECKED_CAST")
-    private fun configureChartSeriesArray(): Array<AASeriesElement> {
-        //定义 maxRange 为 40，创建两个空的数组分别用于存储不同的数据系列。
-        val maxRange = 40
-        val numberArr1 = arrayOfNulls<Any>(maxRange)
-        val numberArr2 = arrayOfNulls<Any>(maxRange)
-        //定义 y1 和 y2 为 Double 类型，用于存储计算后的值。
-        //生成一个随机数 random，在 min 和 max 范围内，用于后续计算。
-        var y1: Double
-        var y2: Double
-        val max = 38
-        val min = 1
-        //使用循环生成 maxRange 个数据点，分别计算 y1 和 y2 的值，
-        // 存储到 numberArr1 和 numberArr2 数组中。这里用到了三角函数计算。
-        val random = (Math.random() * (max - min) + min).toInt()
-        for (i in 0 until maxRange) {
-            y1 = sin(random * (i * Math.PI / 180)) + i * 2 * 0.01
-            y2 = cos(random * (i * Math.PI / 180)) + i * 3 * 0.01
-            numberArr1[i] = y1
-            numberArr2[i] = y2
-        }
-        //返回一个 AASeriesElement 数组，每个元素对应不同年份的系列数据。
-        return arrayOf(
-            AASeriesElement()
-                .name("2017")
-                .data(numberArr1 as Array<Any>),
-            AASeriesElement()
-                .name("2018")
-                .data(numberArr2 as Array<Any>),
-            AASeriesElement()
-                .name("2019")
-                .data(numberArr1 as Array<Any>),
-            AASeriesElement()
-                .name("2020")
-                .data(numberArr2 as Array<Any>)
-        )
-    }
+
+//    @Suppress("UNCHECKED_CAST")
+//    private fun configureChartSeriesArray(): Array<AASeriesElement> {
+//        //定义 maxRange 为 40，创建两个空的数组分别用于存储不同的数据系列。
+//        val maxRange = 40
+//        val numberArr1 = arrayOfNulls<Any>(maxRange)
+//        val numberArr2 = arrayOfNulls<Any>(maxRange)
+//        //定义 y1 和 y2 为 Double 类型，用于存储计算后的值。
+//        //生成一个随机数 random，在 min 和 max 范围内，用于后续计算。
+//        var y1: Double
+//        var y2: Double
+//        val max = 38
+//        val min = 1
+//        //使用循环生成 maxRange 个数据点，分别计算 y1 和 y2 的值，
+//        // 存储到 numberArr1 和 numberArr2 数组中。这里用到了三角函数计算。
+//        val random = (Math.random() * (max - min) + min).toInt()
+//        for (i in 0 until maxRange) {
+//            y1 = sin(random * (i * Math.PI / 180)) + i * 2 * 0.01
+//            y2 = cos(random * (i * Math.PI / 180)) + i * 3 * 0.01
+//            numberArr1[i] = y1
+//            numberArr2[i] = y2
+//        }
+//        //返回一个 AASeriesElement 数组，每个元素对应不同年份的系列数据。
+//        return arrayOf(
+//            AASeriesElement()
+//                .name("2017")
+//                .data(numberArr1 as Array<Any>),
+//            AASeriesElement()
+//                .name("2018")
+//                .data(numberArr2 as Array<Any>),
+//            AASeriesElement()
+//                .name("2019")
+//                .data(numberArr1 as Array<Any>),
+//            AASeriesElement()
+//                .name("2020")
+//                .data(numberArr2 as Array<Any>)
+//        )
+//    }
 
     //repeatUpdateChartData 方法用于定期更新图表数据。
     //创建一个 Handler 实例，用于处理定时任务。
-    private fun repeatUpdateChartData() {
-        val mStartVideoHandler = Handler()
-
-        //创建一个 Runnable 对象，定义在 run 方法中要执行的操作。
-        val mStartVideoRunnable: Runnable = object : Runnable {
-
-            //重写 run 方法，调用 configureChartSeriesArray 来获取最新的数据系列。
-            //使用 aa_onlyRefreshTheChartDataWithChartOptionsSeriesArray 更新图表数据。
-            override fun run() {
-                val seriesArr = configureChartSeriesArray()
-                aaChartView!!.aa_onlyRefreshTheChartDataWithChartOptionsSeriesArray(seriesArr)
-
-                mStartVideoHandler.postDelayed(this, 1000)
-                updateTimes += 1
-
-                print("图表数据正在刷新,刷新次数为:$updateTimes")
-            }
-        }
-
-        mStartVideoHandler.postDelayed(mStartVideoRunnable, 2000)
-    }
+//    private fun repeatUpdateChartData() {
+//        val mStartVideoHandler = Handler()
+//
+//        //创建一个 Runnable 对象，定义在 run 方法中要执行的操作。
+//        val mStartVideoRunnable: Runnable = object : Runnable {
+//
+//            //重写 run 方法，调用 configureChartSeriesArray 来获取最新的数据系列。
+//            //使用 aa_onlyRefreshTheChartDataWithChartOptionsSeriesArray 更新图表数据。
+//            override fun run() {
+//                val seriesArr = configureChartSeriesArray()
+//                aaChartView!!.aa_onlyRefreshTheChartDataWithChartOptionsSeriesArray(seriesArr)
+//
+//                mStartVideoHandler.postDelayed(this, 1000)
+//                updateTimes += 1
+//
+//                print("图表数据正在刷新,刷新次数为:$updateTimes")
+//            }
+//        }
+//
+//        mStartVideoHandler.postDelayed(mStartVideoRunnable, 2000)
+//    }
 
 
     }

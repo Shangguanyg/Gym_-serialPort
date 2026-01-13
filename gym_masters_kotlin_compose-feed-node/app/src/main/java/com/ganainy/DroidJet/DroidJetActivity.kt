@@ -6,13 +6,38 @@ import com.ganainy.DroidJet.fragments.GameFragment
 import com.ganainy.DroidJet.fragments.GameOverFragment
 import com.ganainy.DroidJet.fragments.HomeFragment
 import com.ganainy.gymmasterscompose.R
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
+import android.content.IntentFilter
+import android.os.Build
+import androidx.annotation.RequiresApi
+import com.ganainy.DroidJet.TableFragment
 
 class DroidJetActivity : AppCompatActivity(), GameFragment.GameOverCallback,
     GameOverFragment.RestartListener {
 
+    private lateinit var dataReceiver: BroadcastReceiver
+    private val tableData = mutableListOf<String>()
+
+
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_droidjet)
+
+        // 注册广播接收器
+        dataReceiver = object : BroadcastReceiver() {
+            override fun onReceive(context: Context?, intent: Intent?) {
+                val newData = intent?.getIntExtra("generated_data", 0) ?: 0
+                updateTable(newData)
+            }
+        }
+        registerReceiver(
+            dataReceiver,
+            IntentFilter("DATA_GENERATED"),
+            Context.RECEIVER_NOT_EXPORTED
+        )
 
         if (savedInstanceState == null) {
             val fragmentTransaction = supportFragmentManager.beginTransaction()
@@ -20,6 +45,23 @@ class DroidJetActivity : AppCompatActivity(), GameFragment.GameOverCallback,
             fragmentTransaction.commit()
         }
     }
+
+    private fun updateTable(data: Int) {
+        tableData.add("数据: $data")
+        if (tableData.size > 10) tableData.removeAt(0)
+        // 更新表格UI
+        updateTableUI()
+    }
+
+    private fun updateTableUI() {
+        // 创建表格Fragment并显示
+        val tableFragment = TableFragment.newInstance(tableData.toList())
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragmentContainer, tableFragment)
+            .commit()
+    }
+
+
 
     override fun onGameOver(score: Float) {
         val gameOverFragment = GameOverFragment.newInstance()

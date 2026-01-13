@@ -46,7 +46,7 @@ fun GameScreen(
             gameName = "示例游戏",
             gameDescription = "这是一个游戏的介绍内容，您可以描述游戏的玩法、特色等信息。",
             onClick = {
-                // 点击事件处理逻辑
+                //x w 点击事件处理逻辑
             }
         )
 
