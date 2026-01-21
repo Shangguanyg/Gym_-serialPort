@@ -29,6 +29,12 @@ android {
     namespace = "com.ganainy.gymmasterscompose"
     compileSdk = 35
 
+    externalNativeBuild {
+        cmake {
+            path ("src/main/cpp/CMakeLists.txt")
+        }
+    }
+
     defaultConfig {
         applicationId = "com.ganainy.gymmasterscompose"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -41,6 +47,11 @@ android {
         }
         ndk {
             abiFilters += listOf("x86_64", "arm64-v8a")
+        }
+        externalNativeBuild {
+            cmake {
+                arguments ("-DANDROID_PLATFORM=android-21","-DANDROID_STL=c++_shared")
+            }
         }
 
     }
@@ -321,7 +332,6 @@ dependencies {
 
     implementation ("com.github.kostasdrakonakis:android-navigator:1.2.6")
     kapt ("com.github.kostasdrakonakis:android-navigator-compiler:1.2.6")
-    implementation ("com.github.AAChartModel:AAChartCore-Kotlin:-SNAPSHOT")
     implementation ("com.google.android.material:material:1.9.0")
     implementation("org.jetbrains.kotlin:kotlin-reflect:1.9.0")
     implementation("com.github.Breens-Mbaka:BeeTablesCompose:1.2.0")

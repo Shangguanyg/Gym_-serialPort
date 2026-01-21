@@ -35,13 +35,26 @@ import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 import com.ganainy.serialportlibrary.enumerate.SerialStatus;
 
+import android.content.Context;
+
+
 import java.util.Arrays;
 
 import android.util.Log;
 
+import android.os.Handler;
+import android.os.Looper;
+import android.app.Application;
+
+
 public class SerialPort {
     private ActivityMainJavaBinding binding;
     private Device mDevice;
+
+    private Context context;  // 添加这一行
+
+    private int lastSequenceId = -1;
+
 
     //mDevice: 当前选择的串口设备
     private String[] mDevices;
@@ -70,6 +83,11 @@ public class SerialPort {
         void onDataSent(byte[] data);
     }
 
+    // 在构造函数或初始化时设置context
+    public SerialPort(Context context) {
+        this.context = context;
+    }
+
     private SerialPortCallback callback;
 
 
@@ -78,32 +96,121 @@ public class SerialPort {
     }
 
     public void openSerialPort(SerialPortCallback callback) {
-        SimpleSerialPortManager.getInstance()
-                .openSerialPort("/dev/ttyS4", 115200,
-                        (isSuccess, status) -> {
-                            if (callback != null) {
-                                String message = getStatusMessage(status);
-                                callback.onStatusChanged(isSuccess, status, message);
-                            }
-                        },
-                        new SimpleSerialPortManager.OnDataReceivedCallback() {
-                            @Override
-                            public void onDataReceived(byte[] data) {
-                                Log.d("SerialPort", "onDataReceived [ byte[] ]: " + Arrays.toString(data));
-                                Log.d("SerialPort", "onDataReceived [ String ]: " + new String(data));
-                                if (callback != null) {
-                                    callback.onDataReceived(data);
-                                }
-                            }
+        // 存储回调引用
+        this.callback = callback;
 
-                            @Override
-                            public void onDataSent(byte[] data) {
-                                if (callback != null) {
-                                    callback.onDataSent(data);
-                                }
-                            }
-                        });
+        SimpleSerialPortManager manager = SimpleSerialPortManager.getInstance();
+
+        // 检查并手动初始化
+        try {
+            java.lang.reflect.Field field = manager.getClass().getDeclaredField("isInitialized");
+            field.setAccessible(true);
+            boolean isInitialized = field.getBoolean(manager);
+            Log.d("SerialPort", "SimpleSerialPortManager 初始化状态: " + isInitialized);
+
+            if (!isInitialized) {
+                Log.d("SerialPort", "开始手动初始化 SimpleSerialPortManager...");
+
+                // 从Context获取Application
+                Application application = (Application) context.getApplicationContext();
+
+                // 手动初始化 - 使用与App.java相同的配置
+                new SimpleSerialPortManager.QuickConfig()
+                        .setIntervalSleep(50)
+                        .setEnableLog(true)
+                        .setLogTag("SerialPortApp")
+                        .setDatabits(8)
+                        .setParity(0)
+                        .setStopbits(1)
+                        .setStickyPacketStrategy(SimpleSerialPortManager.StickyPacketStrategy.NO_PROCESSING)
+                        .setMaxPacketSize(1024)
+                        .apply(application);
+
+                Log.d("SerialPort", "手动初始化完成");
+            }
+
+            // 原有的打开串口代码，添加异常处理
+            try {
+                boolean success = SimpleSerialPortManager.getInstance()
+                        .openSerialPort("/dev/ttyS4", 115200,
+                                (isSuccess, status) -> {
+                                    Log.d("SerialPort", "状态回调: success=" + isSuccess + ", status=" + status);
+                                    // 确保在主线程回调
+                                    new Handler(Looper.getMainLooper()).post(() -> {
+                                        if (callback != null) {
+                                            String message = getStatusMessage(status);
+                                            callback.onStatusChanged(isSuccess, status, message);
+                                        }
+                                    });
+                                },
+                                new SimpleSerialPortManager.OnDataReceivedCallback() {
+                                    @Override
+                                    public void onDataReceived(byte[] data) {
+                                        Log.d("SerialPort", "onDataReceived [ byte[] ]: " + Arrays.toString(data));
+                                        Log.d("SerialPort", "onDataReceived [ String ]: " + new String(data));
+
+                                        // 简单的序列号防重复检查
+                                        try {
+                                            String dataStr = new String(data).trim();
+                                            int currentId = extractSequenceId(dataStr);
+                                            if (currentId > lastSequenceId) {
+                                                lastSequenceId = currentId;
+
+                                                // 确保在主线程回调
+                                                new Handler(Looper.getMainLooper()).post(() -> {
+                                                    if (callback != null) {
+                                                        callback.onDataReceived(data);
+                                                    }
+                                                });
+                                            }
+                                        } catch (Exception e) {
+                                            // 解析失败时直接传递
+                                            new Handler(Looper.getMainLooper()).post(() -> {
+                                                if (callback != null) {
+                                                    callback.onDataReceived(data);
+                                                }
+                                            });
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onDataSent(byte[] data) {
+                                        Log.d("SerialPort", "onDataSent [ byte[] ]: " + Arrays.toString(data));
+                                        Log.d("SerialPort", "onDataSent [ String ]: " + new String(data));
+                                        // 确保在主线程回调
+                                        new Handler(Looper.getMainLooper()).post(() -> {
+                                            if (callback != null) {
+                                                callback.onDataSent(data);
+                                            }
+                                        });
+                                    }
+                                });
+
+                Log.d("SerialPort", "openSerialPort 返回结果: " + success);
+
+            } catch (Exception e) {
+                Log.e("SerialPort", "打开串口异常", e);
+                if (callback != null) {
+                    callback.onStatusChanged(false, SerialStatus.OPEN_FAIL, "异常: " + e.getMessage());
+                }
+            }
+
+        } catch (Exception e) {
+            Log.e("SerialPort", "初始化检查失败", e);
+            if (callback != null) {
+                callback.onStatusChanged(false, SerialStatus.OPEN_FAIL, "初始化失败: " + e.getMessage());
+            }
+            return;
+        }
     }
+
+    private int extractSequenceId(String dataStr) {
+        // 从数据字符串中提取序列号
+        String[] parts = dataStr.split(",");
+        return Integer.parseInt(parts[0]);
+    }
+
+
     private String getStatusMessage(SerialStatus status) {
         switch (status) {
             case SUCCESS_OPENED:

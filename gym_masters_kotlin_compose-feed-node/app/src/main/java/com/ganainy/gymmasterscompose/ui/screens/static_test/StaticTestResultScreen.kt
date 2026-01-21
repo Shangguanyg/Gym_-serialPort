@@ -2,6 +2,7 @@ package com.ganainy.gymmasterscompose.ui.screens.static_test
 
 import android.content.Intent
 import android.os.Handler
+import android.util.Log
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -58,6 +59,9 @@ import androidx.compose.material3.CardDefaults
 import com.ganainy.gymmasterscompose.ui.screens.static_test.StaticTestResultViewModel
 import com.ganainy.serialportlibrary.enumerate.SerialStatus
 
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.ui.text.font.FontWeight
 
 /**
  * 🐝 A Compose UI data table library.
@@ -114,28 +118,44 @@ fun StaticTestResultScreen(exercise: StaticExercise?, navigateBack: () -> Unit) 
 
     val context = LocalContext.current
 
-    val serialPort = remember { SerialPort() }
+    val serialPort = remember { SerialPort(context) }
 
-    var receivedData by remember { mutableStateOf("") }
+    var logData by remember { mutableStateOf(StringBuilder()) }
     var isConnected by remember { mutableStateOf(false) }
-    var statusMessage by remember { mutableStateOf("") }
+    var isPortOpening by remember { mutableStateOf(false) }
 
-    // 3. 初始化串口
-    LaunchedEffect(Unit) {
-        serialPort.openSerialPort(object : SerialPort.SerialPortCallback {
-            override fun onStatusChanged(success: Boolean, status: SerialStatus, message: String) {
-                isConnected = success
-                statusMessage = message
-            }
+    // 手动打开串口的函数
+    val openSerialPort: () -> Unit = {
+        if (!isConnected && !isPortOpening) {
+            isPortOpening = true
+            logData.appendLine("[${System.currentTimeMillis()}] 开始打开串口...")
 
-            override fun onDataReceived(data: ByteArray) {
-                receivedData = String(data)
-            }
+            serialPort.openSerialPort(object : SerialPort.SerialPortCallback {
+                override fun onStatusChanged(success: Boolean, status: SerialStatus, message: String) {
+                    isConnected = success
+                    logData.appendLine("[${System.currentTimeMillis()}] 状态变化: $message")
+                    if (success) {
+                        logData.appendLine("[${System.currentTimeMillis()}] 串口打开成功！")
+                    } else {
+                        logData.appendLine("[${System.currentTimeMillis()}] 串口打开失败: $message")
+                        isPortOpening = false
+                    }
+                }
 
-            override fun onDataSent(data: ByteArray) {
-                // 发送完成回调
-            }
-        })
+                override fun onDataReceived(data: ByteArray) {
+                    Log.d("StaticTestResultScreen", "收到数据回调: ${String(data)}")
+                    val dataStr = String(data)
+                    logData.appendLine("[${System.currentTimeMillis()}] 接收数据: $dataStr")
+                    Log.d("StaticTestResultScreen", "logData长度: ${logData.length}")
+                    // 将数据传递给ViewModel处理
+                    viewModel.processRawData(dataStr)
+                }
+
+                override fun onDataSent(data: ByteArray) {
+                    logData.appendLine("[${System.currentTimeMillis()}] 发送数据: ${String(data)}")
+                }
+            })
+        }
     }
 
     // 4. 清理资源
@@ -178,6 +198,7 @@ fun StaticTestResultScreen(exercise: StaticExercise?, navigateBack: () -> Unit) 
     // collectAsState(): 从 StateFlow 中收集最新的 UI 状态并自动更新，以便在用户界面中反映状态的变化。
     // 使用 by 关键字使得 uiState 变量变得观察性，当 uiState 更新时，Compose 会重新组合界面。
     val uiState by viewModel.uiState.collectAsState()
+    val statistics by viewModel.statisticsResult.collectAsState()
 
 
     Column(
@@ -210,31 +231,44 @@ fun StaticTestResultScreen(exercise: StaticExercise?, navigateBack: () -> Unit) 
 //                        rootView
 //                    }
 //                )
-                TestControl()
-                Box(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(200.dp)
-                        .background(Color.LightGray, RoundedCornerShape(8.dp))
-                        .padding(16.dp)
-                ) {
-                    if (receivedData.isEmpty()) {
-                        // 未接收到数据时显示提示
-                        Text(
-                            text = "等待串口数据...",
-                            color = Color.Gray,
-                            style = MaterialTheme.typography.bodyMedium
-                        )
-                    } else {
-                        // 显示接收到的数据
-                        Text(
-                            text = receivedData,
-                            color = Color.Black,
-                            style = MaterialTheme.typography.bodyMedium
-                        )
+                Column {
+                    // 添加开启串口按钮
+                    Button(
+                        onClick = openSerialPort,
+                        enabled = !isConnected && !isPortOpening,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(bottom = 8.dp)
+                    ) {
+                        Text(text = if (isPortOpening) "正在开启..." else "开启串口")
+                    }
+
+                    // 修改数据显示Box，支持叠加显示和滚动
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(200.dp)
+                            .background(Color.LightGray, RoundedCornerShape(8.dp))
+                            .padding(8.dp)
+                            .verticalScroll(rememberScrollState())
+                    ) {
+                        if (logData.isEmpty()) {
+                            Text(
+                                text = "点击'开启串口'按钮开始...",
+                                color = Color.Gray,
+                                style = MaterialTheme.typography.bodySmall
+                            )
+                        } else {
+                            Text(
+                                text = logData.toString(),
+                                color = Color.Black,
+                                style = MaterialTheme.typography.bodySmall
+                            )
+                        }
                     }
                 }
-            }
+
+                }
 
             Box(
                 modifier = Modifier
@@ -257,7 +291,13 @@ fun StaticTestResultScreen(exercise: StaticExercise?, navigateBack: () -> Unit) 
                 )
             }
         }
-
+        Row(
+            modifier = Modifier
+                .fillMaxSize()
+                .weight(1f),
+        ) {
+            StatisticsDisplay(statistics = statistics)
+        }
         Row(
             modifier = Modifier
                 .fillMaxSize()
@@ -329,6 +369,46 @@ fun StaticTestResultScreen(exercise: StaticExercise?, navigateBack: () -> Unit) 
     // Main Screen Content
     // ExerciseListContent(...): 调用一个用于展示锻炼内容的子组件，传递当前的 UI 状态、保存锻炼的回调函数和返回导航的回调函数。
     // ExerciseListContent(uiState, viewModel::toggleExerciseSave, navigateBack)
+}
+
+@Composable
+fun StatisticsDisplay(statistics: StatisticsResult) {
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(8.dp),
+        elevation = CardDefaults.cardElevation(4.dp)
+    ) {
+        Column(
+            modifier = Modifier.padding(16.dp)
+        ) {
+            Text(
+                text = "实时统计数据",
+                style = MaterialTheme.typography.titleMedium,
+                fontWeight = FontWeight.Bold
+            )
+
+            Spacer(modifier = Modifier.height(8.dp))
+
+            Text("样本数量: ${statistics.sampleCount}")
+
+            Spacer(modifier = Modifier.height(4.dp))
+
+            Text("平均值:")
+            Text("变量1: ${"%.2f".format(statistics.average[0])}")
+            Text("变量2: ${"%.2f".format(statistics.average[1])}")
+            Text("变量3: ${"%.2f".format(statistics.average[2])}")
+            Text("变量4: ${"%.2f".format(statistics.average[3])}")
+
+            Spacer(modifier = Modifier.height(4.dp))
+
+            Text("方差:")
+            Text("变量1: ${"%.4f".format(statistics.variance[0])}")
+            Text("变量2: ${"%.4f".format(statistics.variance[1])}")
+            Text("变量3: ${"%.4f".format(statistics.variance[2])}")
+            Text("变量4: ${"%.4f".format(statistics.variance[3])}")
+        }
+    }
 }
 
 fun configurePolarColumnChart(): AAChartModel {

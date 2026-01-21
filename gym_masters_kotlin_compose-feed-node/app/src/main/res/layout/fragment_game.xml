@@ -10,6 +10,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+    <!-- 右上角表格容器 -->
+    <FrameLayout
+        android:id="@+id/tableContainer"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:layout_gravity="top|end"
+        android:layout_margin="16dp"
+        android:background="#80FFFFFF" />
+
     <!-- 左上角退出按钮 -->
     <Button
         android:id="@+id/exitButton"
